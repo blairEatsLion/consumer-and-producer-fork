@@ -16,7 +16,7 @@ while(1){
         turn=fgetc(fpt_1);      //get 0/1
  fclose(fpt_1);
         if (turn<48||turn>49){
-	        printf("ERROR!!! consumer exit, turn char: %c\n",turn);
+//	        printf("ERROR!!! consumer exit, turn char: %c\n",turn);
 	 break;
 //        exit(1);
         }
@@ -29,20 +29,20 @@ while(1){
 
         if(turn=='1'){
 //fclose(fpt_1);
-printf("consumer turn.. open DATA.txt\n");
+//printf("consumer turn.. open DATA.txt\n");
 
 	while((fpt_2=fopen("DATA.txt","r"))==NULL);    //busy loop for DATA.txt try to read single char
-printf("consumer: data.txt open successful..\n");
+//printf("consumer: data.txt open successful..\n");
 	c=fgetc(fpt_2);
 	//make changes
 	if(c=='\0'){
-		printf("reached the end!!!");
+//		printf("reached the end!!!");
 		fclose(fpt_2);
 		break;//if EOF, then exit
 	}
 	putchar(c);
 
-printf("\n");
+//printf("\n");
 	fclose(fpt_2);
         pos=pos+1;      
 
@@ -50,7 +50,7 @@ printf("\n");
 	while((fpt_1=fopen("TURN.txt","r+"))==NULL);    //busy loop for DATA.txt try to read single char
         fputc('0',fpt_1);       //set turn to 0(producer)
         fclose(fpt_1);
-printf("consumer set the turn to producer\n");
+//printf("consumer set the turn to producer\n");
 }
 
 // while(1){

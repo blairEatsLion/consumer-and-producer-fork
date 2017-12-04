@@ -31,7 +31,7 @@ int producer(){
 			}
 
 			if(turn=='0'){
-				printf("producer turn\n");
+//				printf("producer turn\n");
 				// while((t_fpt=fopen("TURN.txt","w+"))==NULL);
 
 				//write to data before write to turn
@@ -48,10 +48,10 @@ int producer(){
 				}		
 				fclose(d_fpt);
 		
-				while((t_fpt=fopen("TURN.txt","w+"))==NULL);
+				while((t_fpt=fopen("TURN.txt","r+"))==NULL);
 				//rewind(t_fpt);
 				fputc('1',t_fpt);
-				printf("now turn is set to 1 consumer\n");
+//				printf("now turn is set to 1 consumer\n");
 				fclose(t_fpt);
 
 	// 			while((d_fpt=fopen("DATA.txt","w"))==NULL);
@@ -62,11 +62,11 @@ int producer(){
 	// 			}			
 
 	//fputc(read,d_fpt);
-				printf("input in data.txt char is: %c\n",read);
+//				printf("input in data.txt char is: %c\n",read);
 				// fclose(d_fpt);
 		//	fclose(t_fpt);
 
-				printf("------------\n");
+//				printf("------------\n");
 		//	fseek(m_fpt,1,SEEK_CUR);
 			}
 	}
